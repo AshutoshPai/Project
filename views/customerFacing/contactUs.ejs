@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/scripts.ejs') %>
+</head>
+
+<body>
+    <%- include ('../partials/styles.ejs') %>
+        <%- include ('./partials/navigation.ejs') %>
+            <main>
+                <div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-7 col-lg-8">
+                                <h4 class="mb-3">Contact Us : Raise a query</h4>
+                                <form class="needs-validation" novalidate="" action="/contactUs" method="post">
+                                    <div class="row g-3">
+
+                                        <div class="col-12">
+                                            <label for="email" class="form-label">Email</label>
+                                            <div class="input has-validation">
+
+                                                <input type="text" class="form-control" id="email" required=""
+                                                    name="email" />
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="query" class="form-label">Query</label>
+                                            <div class="input has-validation">
+
+                                                <textarea type="text" class="form-control" id="query" required=""
+                                                    name="query"></textarea>
+
+                                            </div>
+                                        </div>
+
+                                        <hr class="my-4" />
+
+                                        <div>
+                                            <button class="btn btn-primary btn-lg col-6" type="submit">
+                                                Submit
+                                            </button>
+                                            <button type="reset" class="btn btn-primary btn-lg col-5"> Reset </button>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!DOCTYPE html>
+
+<head>
+    <%- include('../partials/scripts.ejs') %>
+</head>
+
+<body>
+    <%- include ('../partials/styles.ejs') %>
+        <%- include ('./partials/signInNavigation.ejs') %>
+            <main class="login-form">
+                <div>
+                    <div class="cotainer col-md-6" style="float: left;">
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-header">Register</div>
+                                    <div class="card-body">
+                                        <form action="/admin/signIn" method="post">
+                                            <% if(registration==="false" ) {%>
+                                                <div>
+                                                    <h6 style="color: red;">Email already exists.</h6>
+                                                </div>
+                                                <% } %>
+                                                    <div class="form-group row">
+                                                        <label for="name"
+                                                            class="col-md-4 col-form-label text-md-right">Name</label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" id="name" class="form-control"
+                                                                name="name" required autofocus>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label for="email"
+                                                            class="col-md-4 col-form-label text-md-right">E-Mail
+                                                            Address</label>
+                                                        <div class="col-md-6">
+                                                            <input type="email" id="email" class="form-control"
+                                                                name="email" required autofocus>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label for="password"
+                                                            class="col-md-4 col-form-label text-md-right">Password</label>
+                                                        <div class="col-md-6">
+                                                            <input type="password" id="password" class="form-control"
+                                                                name="password" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 offset-md-4">
+                                                        <button type="submit" class="btn btn-primary">
+                                                            Register
+                                                        </button>
+                                                        <button type="reset" class="btn btn-primary">
+                                                            Reset
+                                                        </button>
+                                                    </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cotainer col-md-6" style="float: right;">
+                        <div>
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-header">Log In</div>
+                                    <div class="card-body">
+                                        <form action="/admin/login" method="post">
+                                            <% if(authenticate==="false" ) {%>
+                                                <div>
+                                                    <h6 style="color: red;">Email and Password are not matching.</h6>
+                                                </div>
+                                                <% } %>
+                                                    <div class="form-group row">
+                                                        <label for="email"
+                                                            class="col-md-4 col-form-label text-md-right">E-Mail
+                                                            Address</label>
+                                                        <div class="col-md-6">
+                                                            <input type="email" id="email" class="form-control"
+                                                                name="email" required autofocus>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group row">
+                                                        <label for="password"
+                                                            class="col-md-4 col-form-label text-md-right">Password</label>
+                                                        <div class="col-md-6">
+                                                            <input type="password" id="password" class="form-control"
+                                                                name="password" required>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 offset-md-4">
+                                                        <button type="submit" class="btn btn-primary">
+                                                            Log in
+                                                        </button>
+                                                        <button type="reset" class="btn btn-primary">
+                                                            Reset
+                                                        </button>
+                                                    </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+</body>
+
+</html>

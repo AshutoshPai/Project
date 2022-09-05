@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/scripts.ejs') %>
+</head>
+
+<body>
+    <%- include ('../partials/styles.ejs') %>
+        <%- include ('./partials/navigation.ejs') %>
+            <main>
+                <form action="/admin/editNews" method="post">
+                    <div>
+                        <div class="container">
+                            <div class="userName">
+                                User Name: <%= userName %>, Email: <%= email %>
+                            </div>
+                            <div class="row">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Title</th>
+                                            <th scope="col">Content</th>
+                                            <th scope="col">Published On</th>
+                                            <th scope="col">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% let i=1; news.forEach((newsArticle)=>{ %>
+                                            <tr>
+                                                <th scope="row">
+                                                    <%= i %>
+                                                </th>
+                                                <td>
+                                                    <%= newsArticle.title %>
+                                                </td>
+                                                <td>
+                                                    <%= newsArticle.content %>
+                                                </td>
+                                                <td>
+                                                    <%= newsArticle.published.toDateString() %>
+                                                </td>
+                                                <td>
+                                                    <table>
+                                                        <tr>
+                                                            <button class="w-100 btn btn-primary" type="submit"
+                                                                formaction="/admin/newsEdit" value="<%= newsArticle.title %>" name="title">
+                                                                Edit
+                                                            </button>
+                                                        </tr>
+                                                        <tr>
+                                                            <button class="w-100 btn btn-secondary" type="submit"
+                                                                formaction="/admin/newsDelete" value="<%= newsArticle.title %>" name="title">
+                                                                Delete
+                                                            </button>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <% i++}); %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </main>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<head>
+    <%- include ('../partials/scripts.ejs') %>
+</head>
+
+<body>
+
+    <%- include ('../partials/styles.ejs') %>
+
+        <%- include ('./partials/navigation.ejs') %>
+
+            <main>
+                <!-- Marketing messaging and featurettes
+            ================================================== -->
+                <!-- Wrap the rest of the page in another container to center all the content. -->
+
+                <div class="container marketing">
+                    <div class="row">
+                        <% sportsNews.forEach((newsArticle)=>{ %>
+                            <div class="col-lg-4">
+                                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140"
+                                    preserveAspectRatio="xMidYMid slice" focusable="false">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#777" />
+                                    <image href="<%= newsArticle.image %>" height="100%" width="100%" />
+                                </svg>
+
+                                <h2 class="fw-normal">
+                                    <%= newsArticle.title %>
+                                </h2>
+                                <p>
+                                    <%= newsArticle.content %>
+                                </p>
+                                <p><a class="btn btn-secondary" href="<%= newsArticle.link %>" target="_blank">View
+                                        details
+                                        &raquo;</a></p>
+                            </div>
+                            <% }); %>
+                    </div>
+
+                    <!-- START THE FEATURETTES -->
+
+                    <% sportsNews.forEach((newsArticle)=>{ let i =1; %>
+
+                        <hr class="featurette-divider">
+
+                        <div class="row featurette">
+                            <div class="col-md-7 order-md-2">
+                                <h2 class="featurette-heading fw-normal lh-1">
+                                    <%= newsArticle.title %>. <span class="text-muted">
+                                            <%= newsArticle.banner %>
+                                        </span>
+                                </h2>
+                                <p class="lead">
+                                    <%= newsArticle.content %>
+                                </p>
+                            </div>
+                            <div class="col-md-5 order-md-1">
+                                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                                    width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img"
+                                    aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice"
+                                    focusable="false">
+                                    <title>Placeholder</title>
+                                    <rect width="100%" height="100%" fill="#eee" />
+                                    <image href="<%= newsArticle.image %>" height="100%" width="100%" />
+                                </svg>
+
+                            </div>
+                        </div>
+
+                        <% i++;}); %>
+                            <hr class="featurette-divider">
+
+                            <!-- /END THE FEATURETTES -->
+
+                </div><!-- /.container -->
+
+
+                <!-- FOOTER -->
+                <footer class="container">
+                    <p class="float-end"><a href="#">Back to top</a></p>
+                    <p>&copy; 2017–2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a>
+                    </p>
+                </footer>
+            </main>
+
+
+            <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+                crossorigin="anonymous"></script>
+
+</body>
+
+</html>

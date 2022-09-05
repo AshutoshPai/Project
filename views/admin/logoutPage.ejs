@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<head>
+    <%- include('../partials/scripts.ejs') %>
+</head>
+
+<body>
+    <%- include ('../partials/styles.ejs') %>
+        <%- include ('./partials/navigation.ejs') %>
+
+            <div class="modal modal-tour position-static d-block py-5" tabindex="-1" role="dialog" id="modalTour">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content rounded-4 shadow">
+                        <div class="modal-body p-5">
+                            <h2 class="fw-bold mb-0">Logged Out</h2>
+                            <button type="button" onclick="location.href = '/admin/logIn';"
+                                class="btn btn-lg btn-primary mt-5 w-100" data-bs-dismiss="modal">Log back in?</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/scripts.ejs') %>
+</head>
+
+<body>
+    <%- include ('../partials/styles.ejs') %>
+        <%- include ('./partials/navigation.ejs') %>
+            <main>
+                <div>
+                    <div class="container">
+                        <div class="userName">
+                            User Name: <%= userName %>, Email: <%= email %>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7 col-lg-8">
+                                <h4 class="mb-3">Add news</h4>
+                                <form class="needs-validation" novalidate="" action="/admin/newsForm" method="post">
+                                    <div class="row g-3">
+
+                                        <div class="col-12">
+                                            <label for="title" class="form-label">Title</label>
+                                            <div class="input has-validation">
+
+                                                <input type="text" class="form-control" id="title" required=""
+                                                    name="title" />
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="content" class="form-label">Content</label>
+                                            <div class="input has-validation">
+
+                                                <textarea type="text" class="form-control" id="content" required=""
+                                                    name="content"></textarea>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="author" class="form-label">Author</label>
+                                            <div class="input has-validation">
+
+                                                <input type="text" class="form-control" id="author" required=""
+                                                    name="author" />
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="banner" class="form-label">Banner</label>
+                                            <div class="input has-validation">
+
+                                                <input type="text" class="form-control" id="banner" required=""
+                                                    name="banner" />
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="link" class="form-label">Link</label>
+                                            <div class="input has-validation">
+
+                                                <input type="text" class="form-control" id="link" required=""
+                                                    name="link" />
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="image" class="form-label">Image</label>
+                                            <div class="input has-validation">
+
+                                                <input type="text" class="form-control" id="image" required=""
+                                                    name="image" />
+
+                                            </div>
+                                        </div>
+
+                                        <hr class="my-4" />
+
+                                        <button class="w-100 btn btn-primary btn-lg" type="submit">
+                                            Add news
+                                        </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+</body>
+
+</html>
